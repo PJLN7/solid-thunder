@@ -154,6 +154,10 @@ button:hover {
   text-align: left;
 }
 
+#loader {
+  padding: 5%;
+}
+
 #card-back button {
   background: #7e3ea2;
   color: white;

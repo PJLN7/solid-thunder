@@ -2,6 +2,7 @@ const innerCard = document.querySelector('#card-inner');
 const leaderBoard = document.querySelector('#leaderboard-donor-list');
 const leaderBoardTotal = document.querySelector('.leaderboard-total');
 const numOfTopDonors = document.querySelector('#card-back-top-donors');
+const loader = document.querySelector('#loader');
 const API = '/data/donors.json';
 
 function debounce(func, wait, immediate) {
@@ -55,6 +56,7 @@ const createElements = (donors) => {
 const clearElements = () => {
   numOfTopDonors.textContent = 'Top donors';
   leaderBoard.innerHTML = '';
+  leaderBoard.appendChild(loader);
   leaderBoardTotal.textContent = `$0`;
 };
 
@@ -64,6 +66,8 @@ const fetchData = debounce(async function () {
     try {
       const res = await fetch(API);
       const donors = await res.json();
+
+      if (leaderBoard.contains(loader)) leaderBoard.removeChild(loader);
 
       if (leaderBoard.children.length > 1 || !donors.length) return;
       createElements(donors);
@@ -75,4 +79,6 @@ const fetchData = debounce(async function () {
   }
 }, 1000);
 
-innerCard.addEventListener('transitionrun', fetchData);
+innerCard.addEventListener('transitionrun', () => {
+  fetchData();
+});
