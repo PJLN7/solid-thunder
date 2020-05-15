@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Card</title>
+  </head>
+  <body>
+    <main id="card">
+      <div id="card-inner">
+        <article id="card-front">
+          <img src="/images/campus.jpg" alt="avatar" />
+          <div id="card-front-text">
+            <section class="card-meta">
+              <h1>Class of 2017 Challenge</h1>
+              <h3>For College of the Holy Cross</h3>
+            </section>
+            <section id="card-description">
+              <p>
+                $25,000 is on the line. Please make a gift today to honor Dean
+                Paco and help 2017 reach 60%!
+              </p>
+            </section>
+            <section id="card-graphic">
+              <div id="graphic-donors">
+                <p class="emphasize-text">75%</p>
+                <p class="emphasize-text">471 Donors</p>
+              </div>
+              <div id="graphic-bar">
+                <div id="graphic-bar-filler"></div>
+              </div>
+              <div id="graphic-donated">
+                <p>Active</p>
+                <p><span class="emphasize-text">$19,096</span> Donated</p>
+              </div>
+            </section>
+          </div>
+        </article>
+        <article id="card-back">
+          <section class="card-meta">
+            <h1>Class of 2017 Challenge</h1>
+            <h3 id="card-back-top-donors">Top donors</h3>
+          </section>
+          <section id="card-back-leaderboard">
+            <div class="leaderboard-headers emphasize-text">
+              <p>Donor</p>
+              <p>Dollars</p>
+              <p>Type</p>
+            </div>
+            <ul id="leaderboard-donor-list"></ul>
+          </section>
+          <button type="button">MAKE A GIFT</button>
+          <p class="leaderboard-total emphasize-text">$0</p>
+        </article>
+      </div>
+    </main>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

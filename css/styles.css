@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: white;
+}
+
+h1 {
+  color: #7e3ea2;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+#card {
+  width: 400px;
+  height: 700px;
+  perspective: 1000px;
+  margin: 5% auto;
+  background: transparent;
+}
+
+#card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(93, 93, 93, 0.2);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+#card-front,
+#card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: white;
+}
+
+#card-back {
+  transform: rotateY(180deg);
+}
+
+#card-inner:hover {
+  transform: rotateY(180deg);
+}
+
+#card-front-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5%;
+  line-height: 1.75rem;
+}
+
+#card-front img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+#card-description {
+  margin: 8% 0 10% 0;
+  font-weight: 100;
+}
+
+#graphic-donors,
+#graphic-donated {
+  display: flex;
+  justify-content: space-between;
+}
+
+#graphic-donated p {
+  font-weight: 100;
+}
+
+#graphic-bar {
+  width: 100%;
+  height: 50px;
+  background: lightgray;
+  margin: 10px 0;
+}
+
+#graphic-bar-filler {
+  width: 75%;
+  height: 100%;
+  background: #7e3ea2;
+}
+
+#card-back {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+}
+
+#card-back-leaderboard {
+  border-top: 1px solid rgba(161, 161, 161, 0.2);
+  border-bottom: 1px solid rgba(161, 161, 161, 0.2);
+  width: 100%;
+  margin: 5% 0 2.5% 0;
+  overflow: auto;
+}
+
+#card-back-leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  text-align: center;
+}
+
+.emphasize-text {
+  font-weight: 600;
+}
+
+.leaderboard-headers {
+  border-bottom: 1px solid rgba(161, 161, 161, 0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.leaderboard-headers p {
+  flex: 1;
+  text-align: center;
+}
+
+.leaderboard-headers p:first-child {
+  text-align: left;
+}
+
+#leaderboard-donor-list {
+  font-weight: 100;
+}
+
+#leaderboard-donor-list li p {
+  flex: 1;
+}
+
+#leaderboard-donor-list li:nth-last-child(n + 2) {
+  border-bottom: 1px solid rgba(161, 161, 161, 0.2);
+}
+
+#leaderboard-donor-list li p:nth-child(1) {
+  text-align: left;
+}
+
+#card-back button {
+  background: #7e3ea2;
+  color: white;
+  border: none;
+  padding: 2.5% 5%;
+  border-radius: 25px;
+  width: 50%;
+  cursor: pointer;
+  margin: 10% 0;
+  font-weight: 600;
+}
+
+.leaderboard-total {
+  font-size: 2rem;
+}
